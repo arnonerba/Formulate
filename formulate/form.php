@@ -6,7 +6,7 @@ function fcf_build() {
 	// only build the form if the reCAPTCHA settings have been set
 	if ( !empty(get_option( 'fcf_recaptcha_sitekey' )) && !empty(get_option( 'fcf_recaptcha_secretkey' )) ) {
 
-		echo'<script src="https://www.google.com/recaptcha/api.js"></script>
+		echo '<script src="https://www.google.com/recaptcha/api.js"></script>
 		<form class="card wide" action="' . esc_url( $_SERVER['REQUEST_URI'] ) . '" method="post">
 			<div class="card-title">Contact Us</div>
 			<div class="card-text">
@@ -22,5 +22,6 @@ function fcf_build() {
 				<button id="contact_submitted" type="submit" class="button" name="contact_submitted">Send</button>
 			</div>
 		</form>';
+
 	}
 }

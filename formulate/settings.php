@@ -18,23 +18,28 @@ function build_fcf_options_page() { ?>
 		</div>
 		<?php } ?>
 		<form action="options.php" method="post">
-			<?php settings_fields( 'fcf_general_settings' ); ?>
+			<?php settings_fields( 'fcf_settings' ); ?>
 			<?php do_settings_sections( 'formulate' ); ?>
 			<?php submit_button(); ?>
 		</form>
 	</div>
 <?php }
 
-add_action( 'admin_init', 'fcf_options_init' );
-function fcf_options_init() {
-	register_setting( 'fcf_general_settings', 'fcf_admin_email', 'validate_fcf_admin_email' );
-	register_setting( 'fcf_general_settings', 'fcf_recaptcha_sitekey', 'validate_fcf_recaptcha_sitekey' );
-	register_setting( 'fcf_general_settings', 'fcf_recaptcha_secretkey', 'validate_fcf_recaptcha_secretkey' );
+add_action( 'admin_init', 'fcf_settings_init' );
+function fcf_settings_init() {
+	register_setting( 'fcf_settings', 'fcf_admin_email', 'validate_fcf_admin_email' );
+	register_setting( 'fcf_settings', 'fcf_recaptcha_sitekey', 'validate_fcf_recaptcha_sitekey' );
+	register_setting( 'fcf_settings', 'fcf_recaptcha_secretkey', 'validate_fcf_recaptcha_secretkey' );
+	register_setting( 'fcf_settings', 'fcf_default_stylesheet' );
+
 	add_settings_field( 'fcf_admin_email', 'Admin Email', 'fcf_admin_email_callback', 'formulate', 'fcf_general_settings' );
 	add_settings_field( 'fcf_recaptcha_sitekey', 'reCAPTCHA Site Key', 'fcf_recaptcha_sitekey_callback', 'formulate', 'fcf_recaptcha_settings' );
 	add_settings_field( 'fcf_recaptcha_secretkey', 'reCAPTCHA Secret Key', 'fcf_recaptcha_secretkey_callback', 'formulate', 'fcf_recaptcha_settings' );
+	add_settings_field( 'fcf_stylesheet_settings', 'Theme', 'fcf_stylesheet_settings_callback', 'formulate', 'fcf_advanced_settings' );
+
 	add_settings_section( 'fcf_general_settings', 'General Settings', 'fcf_general_settings_callback', 'formulate' );
 	add_settings_section( 'fcf_recaptcha_settings', 'reCAPTCHA Settings', 'fcf_recaptcha_settings_callback', 'formulate' );
+	add_settings_section( 'fcf_advanced_settings', 'Advanced Settings', 'fcf_advanced_settings_callback', 'formulate' );
 }
 
 // generates the settings sections
@@ -43,6 +48,9 @@ function fcf_general_settings_callback() {
 }
 function fcf_recaptcha_settings_callback() {
 	echo '<p>Go <a href="https://www.google.com/recaptcha">here</a> to setup your reCAPTCHA.</p>';
+}
+function fcf_advanced_settings_callback() {
+
 }
 
 // generates the settings fields
@@ -73,6 +81,15 @@ function fcf_recaptcha_secretkey_callback() {
 	} else {
 		echo '<p>You don\'t have sufficient privileges to edit this setting</p>';
 	}
+}
+function fcf_stylesheet_settings_callback() {
+	$options = get_option( 'fcf_default_stylesheet' );
+
+	echo '<input checked type="radio" id="stylesheet_option_one" name="fcf_default_stylesheet[stylesheet]" value="1"' . checked( 1, $options['stylesheet'], false ) . '/>
+	<label for="stylesheet_option_one">Light Theme</label>
+	<br />
+	<input type="radio" id="stylesheet_option_two" name="fcf_default_stylesheet[stylesheet]" value="2"' . checked( 2, $options['stylesheet'], false ) . '/>
+	<label for="stylesheet_option_two">Dark Theme</label>';
 }
 
 // validates the settings options
