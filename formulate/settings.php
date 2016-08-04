@@ -89,7 +89,11 @@ function fcf_stylesheet_settings_callback() {
 	<label for="stylesheet_option_one">Light Theme</label>
 	<br />
 	<input type="radio" id="stylesheet_option_two" name="fcf_default_stylesheet[stylesheet]" value="2"' . checked( 2, $options['stylesheet'], false ) . '/>
-	<label for="stylesheet_option_two">Dark Theme</label>';
+	<label for="stylesheet_option_two">Dark Theme</label>
+	<br />
+	<input type="radio" id="stylesheet_option_three" name="fcf_default_stylesheet[stylesheet]" value="3"' . checked( 3, $options['stylesheet'], false ) . '/>
+	<label for="stylesheet_option_three">No Theme</label>
+	<p class="description">Advanced option; allows you to write your own custom CSS for the contact form.';
 }
 
 // validates the settings options
