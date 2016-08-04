@@ -35,29 +35,29 @@ function fcf_send() {
 			// finally, attempt to send the email
 			if ( $responseData->success ) {
 				if ( wp_mail( $to, $subject, $message ) ) {
-					echo '<div class="card wide status">';
-					echo '<div class="card-text">';
+					echo '<div class="fcf-card">';
+					echo '<div class="fcf-card-text">';
 					echo '<p>Thanks for contacting us. We will respond to you as soon as possible.</p>';
 					echo '</div>';
 					echo '</div>';
 				} else {
-					echo '<div class="card wide status">';
-					echo '<div class="card-text">';
+					echo '<div class="fcf-card">';
+					echo '<div class="fcf-card-text">';
 					echo 'Uh oh, something went wrong. Please check your entries and try again.';
 					echo '</div>';
 					echo '</div>';
 				}
 			} else {
-				echo '<div class="card wide status">';
-				echo '<div class="card-text">';
+				echo '<div class="fcf-card">';
+				echo '<div class="fcf-card-text">';
 				echo 'reCAPTCHA verification failed';
 				echo '</div>';
 				echo '</div>';
 			}
 
 		} else {
-			echo '<div class="card wide status">';
-			echo '<div class="card-text">';
+			echo '<div class="fcf-card">';
+			echo '<div class="fcf-card-text">';
 			echo 'Please fill out all the fields, including the reCAPTCHA.';
 			echo '</div>';
 			echo '</div>';

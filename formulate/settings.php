@@ -86,14 +86,16 @@ function fcf_stylesheet_settings_callback() {
 	$options = get_option( 'fcf_default_stylesheet' );
 
 	echo '<input checked type="radio" id="stylesheet_option_one" name="fcf_default_stylesheet[stylesheet]" value="1"' . checked( 1, $options['stylesheet'], false ) . '/>
-	<label for="stylesheet_option_one">Light Theme</label>
+	<label for="stylesheet_option_one">Material Light</label>
+	<p class="description">Light theme based on the Material Design Guidelines.</p>
 	<br />
 	<input type="radio" id="stylesheet_option_two" name="fcf_default_stylesheet[stylesheet]" value="2"' . checked( 2, $options['stylesheet'], false ) . '/>
-	<label for="stylesheet_option_two">Dark Theme</label>
+	<label for="stylesheet_option_two">Material Dark</label>
+	<p class="description">Dark theme based on the Material Design Guidelines.</p>
 	<br />
 	<input type="radio" id="stylesheet_option_three" name="fcf_default_stylesheet[stylesheet]" value="3"' . checked( 3, $options['stylesheet'], false ) . '/>
 	<label for="stylesheet_option_three">No Theme</label>
-	<p class="description">Advanced option; allows you to write your own custom CSS for the contact form.';
+	<p class="description">Advanced option; allows you to write your own custom CSS for the contact form.</p>';
 }
 
 // validates the settings options

@@ -24,9 +24,9 @@ if ( !empty(get_option( 'fcf_recaptcha_sitekey' )) && !empty(get_option( 'fcf_re
 		if (!is_admin()) {
 			$stylesheet_setting = get_option('fcf_default_stylesheet');
 			if ( $stylesheet_setting['stylesheet'] == 1 ) {
-				wp_enqueue_style( 'cfc-light', plugin_dir_url( __FILE__ ) . 'css/light.css', '', '1.5' );
+				wp_enqueue_style( 'cfc-material-light', plugin_dir_url( __FILE__ ) . 'css/light.css', '', '1.5' );
 			} elseif ( $stylesheet_setting['stylesheet'] == 2 ) {
-				wp_enqueue_style( 'cfc-dark', plugin_dir_url( __FILE__ ) . 'css/dark.css', '', '1.5' );
+				wp_enqueue_style( 'cfc-material-dark', plugin_dir_url( __FILE__ ) . 'css/dark.css', '', '1.5' );
 			}
 		}
 	}
