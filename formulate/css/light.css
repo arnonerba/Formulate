@@ -16,6 +16,7 @@
 	box-sizing: border-box;
 	overflow: hidden;
 	box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+	font-family: 'Roboto', sans-serif;
 }
 .fcf-card-title {
 	margin: 24px 16px 0 16px;
@@ -41,7 +42,7 @@
 	border-top: 1px solid rgba(0,0,0,.1);
 }
 
-.fcf-button {
+.fcf-button, #fcf_submitted {
 	position: relative;
 	background: 0 0;
 	border: none;
@@ -66,14 +67,14 @@
 	color: #3F51B5;
 	transition: background-color 150ms ease;
 }
-.fcf-button:hover {
+.fcf-button:hover, #fcf_submitted:hover {
 	background: rgba(158,158,158,.2);
 }
-.fcf-button:active {
+.fcf-button:active, #fcf_submitted:active {
 	background: rgba(158,158,158,.4);
 }
 
-.fcf-textfield {
+.fcf-textfield, #fcf-contact-name, #fcf-contact-email, #fcf-contact-message {
 	border: none;
 	border-bottom: 2px solid rgba(0,0,0,.38);
 	display: block;
@@ -85,11 +86,12 @@
 	background: 0 0;
 	text-align: left;
 	color: rgba(0,0,0,.87);
+	line-height: normal;
 	outline: none;
 	border-radius: 0;
 	-webkit-appearance: none;
 }
-.fcf-textfield:focus {
+.fcf-textfield:focus, #fcf-contact-name:focus, #fcf-contact-email:focus, #fcf-contact-message:focus {
 	border-bottom: 2px solid #3F51B5;
 }
 .fcf-textfield-label {
