@@ -7,7 +7,7 @@ function fcf_send() {
 	if ( isset( $_POST['fcf_submitted'] ) ) {
 
 		// make sure the user has filled in all the fields including the reCAPTCHA, otherwise, display a warning message
-		if ( !empty($_POST["contact_name"]) && !empty($_POST["contact_email"]) && !empty($_POST["contact_message"]) && !empty($_POST['g-recaptcha-response']) ) {
+		if ( !empty($_POST["fcf_contact_name"]) && !empty($_POST["fcf_contact_email"]) && !empty($_POST["fcf_contact_message"]) && !empty($_POST['g-recaptcha-response']) ) {
 
 			// secret key for reCAPTCHA
 			$secret = sanitize_text_field( get_option( 'fcf_recaptcha_secretkey' ) );
@@ -20,10 +20,10 @@ function fcf_send() {
 			$blog_title = get_bloginfo( 'name' );
 
 			// sanitize form values and setup email message
-			$name = sanitize_text_field( $_POST["contact_name"] );
-			$email = sanitize_email( $_POST["contact_email"] );
+			$name = sanitize_text_field( $_POST["fcf_contact_name"] );
+			$email = sanitize_email( $_POST["fcf_contact_email"] );
 			$subject = "[$blog_title]" . " New Inquiry From $name";
-			$message = "\nName: $name\n" . "\nEmail: $email\n" . "\nMessage:\n\n" . implode( "\n", array_map( 'sanitize_text_field', explode( "\n", $_POST['contact_message'] ) ) );
+			$message = "\nName: $name\n" . "\nEmail: $email\n" . "\nMessage:\n\n" . implode( "\n", array_map( 'sanitize_text_field', explode( "\n", $_POST['fcf_contact_message'] ) ) );
 
 			// get the email address configured on the settings page, otherwise, fall back to the admin email address
 			if ( get_option( 'fcf_admin_email' ) ) {

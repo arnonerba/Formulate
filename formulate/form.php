@@ -9,11 +9,11 @@ function fcf_build() {
 		<form class="fcf-card" action="' . esc_url( $_SERVER['REQUEST_URI'] ) . '" method="post">
 			<div class="fcf-card-title">Contact Us</div>
 			<div class="fcf-card-text">
-				<input type="text" id="fcf-contact-name" class="fcf-textfield" id="name" name="contact_name" pattern="[a-zA-Z0-9\. ]+" value="' . ( isset( $_POST["contact_name"] ) ? esc_attr( $_POST["contact_name"] ) : '' ) . '">
+				<input type="text" id="fcf-contact-name" class="fcf-textfield" id="name" name="fcf_contact_name" pattern="[a-zA-Z0-9\. ]+" value="' . ( isset( $_POST["fcf_contact_name"] ) ? esc_attr( $_POST["fcf_contact_name"] ) : '' ) . '">
 				<label class="fcf-textfield-label" for="name">Your Name</label>
-				<input type="email" id="fcf-contact-email" class="fcf-textfield" id="email" name="contact_email" value="' . ( isset( $_POST["contact_email"] ) ? esc_attr( $_POST["contact_email"] ) : '' ) . '">
+				<input type="email" id="fcf-contact-email" class="fcf-textfield" id="email" name="fcf_contact_email" value="' . ( isset( $_POST["fcf_contact_email"] ) ? esc_attr( $_POST["fcf_contact_email"] ) : '' ) . '">
 				<label class="fcf-textfield-label" for="email">Email Address</label>
-				<textarea id="fcf-contact-message" class="fcf-textfield textarea" type="text" rows= "5" id="message" name="contact_message">' . ( isset( $_POST["contact_message"] ) ? esc_attr( $_POST["contact_message"] ) : '' ) . '</textarea>
+				<textarea id="fcf-contact-message" class="fcf-textfield textarea" type="text" rows= "5" id="message" name="fcf_contact_message">' . ( isset( $_POST["fcf_contact_message"] ) ? esc_attr( $_POST["fcf_contact_message"] ) : '' ) . '</textarea>
 				<label class="fcf-textfield-label" for="message">Message</label>
 				
 			</div>
