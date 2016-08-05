@@ -95,7 +95,7 @@ function fcf_stylesheet_settings_callback() {
 	<br />
 	<input type="radio" id="stylesheet_option_three" name="fcf_default_stylesheet[stylesheet]" value="3"' . checked( 3, $options['stylesheet'], false ) . '/>
 	<label for="stylesheet_option_three">No Theme</label>
-	<p class="description">Advanced option; allows you to write your own custom CSS for the contact form.</p>';
+	<p class="description">Advanced option; allows you to use your theme\'s CSS or write your own.</p>';
 }
 
 // validates the settings options
