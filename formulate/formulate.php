@@ -20,6 +20,7 @@ if ( !empty(get_option( 'fcf_recaptcha_sitekey' )) && !empty(get_option( 'fcf_re
 	global $configured;
 	$configured = True;
 }
+
 // load stylesheets
 if ( $configured ) {
 	function fcf_styles() {
