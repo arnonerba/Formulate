@@ -1,5 +1,5 @@
 === Formulate ===
-Tags: contact form, contact, form, feedback, email, captcha
+Tags: contact form, contact, form, feedback, email, captcha, recaptcha, material design, material, google
 Tested up to: 4.5.3
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl.html
