@@ -14,6 +14,8 @@ if ( is_admin() ) {
 	require_once plugin_dir_path( __FILE__ ) . 'settings.php';
 }
 
+$theme = get_option('fcf_default_stylesheet');
+
 require_once plugin_dir_path( __FILE__ ) . 'form.php';
 
 require_once plugin_dir_path( __FILE__ ) . 'send.php';
@@ -22,10 +24,10 @@ require_once plugin_dir_path( __FILE__ ) . 'send.php';
 if ( !empty(get_option( 'fcf_recaptcha_sitekey' )) && !empty(get_option( 'fcf_recaptcha_secretkey' )) ) {
 	function fcf_styles() {
 		if (!is_admin()) {
-			$stylesheet_setting = get_option('fcf_default_stylesheet');
-			if ( $stylesheet_setting['stylesheet'] == 1 ) {
+			global $theme;
+			if ( $theme['stylesheet'] == 1 ) {
 				wp_enqueue_style( 'cfc-material-light', plugin_dir_url( __FILE__ ) . 'css/light.css', '', '1.5' );
-			} elseif ( $stylesheet_setting['stylesheet'] == 2 ) {
+			} elseif ( $theme['stylesheet'] == 2 ) {
 				wp_enqueue_style( 'cfc-material-dark', plugin_dir_url( __FILE__ ) . 'css/dark.css', '', '1.5' );
 			}
 		}
