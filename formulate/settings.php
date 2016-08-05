@@ -9,9 +9,6 @@ function fcf_options_page() {
 function build_fcf_options_page() { ?>
 	<div class="wrap">
 		<h1>Formulate Settings</h1>
-		<div class="notice notice-info">
-			<p>Please note that this plugin is still under active development.</p>
-		</div>
 		<?php if ( empty(get_option( 'fcf_recaptcha_sitekey' )) && empty(get_option( 'fcf_recaptcha_secretkey' )) ) { ?>
 		<div class="notice notice-warning">
 			<p>You must enter a valid reCAPTCHA Site Key and Secret Key before the contact form will display on your site.</p>
