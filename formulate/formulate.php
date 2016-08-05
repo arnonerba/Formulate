@@ -15,13 +15,13 @@ if ( is_admin() ) {
 }
 
 $theme = get_option('fcf_default_stylesheet');
-
-require_once plugin_dir_path( __FILE__ ) . 'form.php';
-
-require_once plugin_dir_path( __FILE__ ) . 'send.php';
-
-// include stylesheets if the reCAPTCHA settings have been set
+$configured = False;
 if ( !empty(get_option( 'fcf_recaptcha_sitekey' )) && !empty(get_option( 'fcf_recaptcha_secretkey' )) ) {
+	global $configured;
+	$configured = True;
+}
+// load stylesheet
+if ( $configured ) {
 	function fcf_styles() {
 		if (!is_admin()) {
 			global $theme;
@@ -34,6 +34,9 @@ if ( !empty(get_option( 'fcf_recaptcha_sitekey' )) && !empty(get_option( 'fcf_re
 	}
 	add_action( 'wp_enqueue_scripts', 'fcf_styles' );
 }
+
+require_once plugin_dir_path( __FILE__ ) . 'form.php';
+require_once plugin_dir_path( __FILE__ ) . 'send.php';
 
 # SHORTCODE
 
