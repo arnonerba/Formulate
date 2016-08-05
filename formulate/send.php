@@ -4,7 +4,7 @@
 
 function fcf_send() {
 	// send the email if the submit button is clicked
-	if ( isset( $_POST['contact_submitted'] ) ) {
+	if ( isset( $_POST['fcf_submitted'] ) ) {
 
 		// make sure the user has filled in all the fields including the reCAPTCHA, otherwise, display a warning message
 		if ( !empty($_POST["contact_name"]) && !empty($_POST["contact_email"]) && !empty($_POST["contact_message"]) && !empty($_POST['g-recaptcha-response']) ) {
