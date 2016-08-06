@@ -10,7 +10,7 @@
 	flex: none;
 	background-color: #424242;
 	border-radius: 2px;
-	width: 315px;
+	max-width: 315px;
 	margin: 8px;
 	z-index: 1;
 	box-sizing: border-box;
@@ -107,6 +107,7 @@
 	margin: 0 !important;
 }
 
-.g-recaptcha {
-	margin: 0 auto 16px auto;
+#fcf-recaptcha {
+	padding: 0 5px 16px 6px;
+	overflow: hidden;
 }

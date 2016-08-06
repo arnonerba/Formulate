@@ -17,14 +17,16 @@ function fcf_build() {
 				<label class="fcf-textfield-label" for="fcf-contact-message">Message</label>
 				
 			</div>
-			<div class="g-recaptcha"';
-			global $theme;
-			if ( $theme['stylesheet'] == 1 ) {
-				echo 'data-theme="light"';
-			} elseif ( $theme['stylesheet'] == 2 ) {
-				echo 'data-theme="dark"';
-			}
-			echo 'data-sitekey="' . sanitize_text_field( get_option( 'fcf_recaptcha_sitekey' ) ) . '"></div>
+			<div id="fcf-recaptcha">
+				<div class="g-recaptcha"';
+				global $theme;
+				if ( $theme['stylesheet'] == 1 ) {
+					echo 'data-theme="light"';
+				} elseif ( $theme['stylesheet'] == 2 ) {
+					echo 'data-theme="dark"';
+				}
+				echo 'data-sitekey="' . sanitize_text_field( get_option( 'fcf_recaptcha_sitekey' ) ) . '"></div>
+			</div>
 			<div class="fcf-card-actions">
 				<button id="fcf_submitted" type="submit" class="fcf-button" name="fcf_submitted">Send</button>
 			</div>
