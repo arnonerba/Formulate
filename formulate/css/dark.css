@@ -35,6 +35,10 @@
 	color: #FAFAFA;
 	overflow: hidden;
 }
+.fcf-card-text p {
+	margin: 0;
+	padding: 0;
+}
 .fcf-card-actions {
 	-webkit-flex: none;
 	flex: none;
@@ -74,7 +78,7 @@
 	background: rgba(158,158,158,.4);
 }
 
-.fcf-textfield, #fcf-contact-name, #fcf-contact-email, #fcf-contact-message {
+.fcf-textfield, #fcf-contact-name, #fcf-phone-number, #fcf-contact-email, #fcf-contact-message {
 	border: none;
 	border-bottom: 2px solid rgba(255,255,255,.5);
 	display: block;
@@ -91,7 +95,7 @@
 	border-radius: 0;
 	-webkit-appearance: none;
 }
-.fcf-textfield:focus, #fcf-contact-name:focus, #fcf-contact-email:focus, #fcf-contact-message:focus {
+.fcf-textfield:focus, #fcf-contact-name:focus, #fcf-phone-number:focus, #fcf-contact-email:focus, #fcf-contact-message:focus {
 	border-bottom: 2px solid #FF9800;
 }
 .fcf-textfield-label {
