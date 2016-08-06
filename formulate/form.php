@@ -7,7 +7,13 @@ function fcf_build() {
 	if ( $configured ) {
 		echo '<script src="https://www.google.com/recaptcha/api.js"></script>
 		<form class="fcf-card" action="' . esc_url( $_SERVER['REQUEST_URI'] ) . '" method="post">
-			<div class="fcf-card-title">Contact Us</div>
+			<div class="fcf-card-title">';
+			if ( get_option( 'fcf_form_title' ) ) {
+				$title = sanitize_text_field( get_option( 'fcf_form_title' ) );
+			} else {
+				$title = 'Contact Us';
+			}
+			echo $title . '</div>
 			<div class="fcf-card-text">
 				<input type="text" id="fcf-contact-name" class="fcf-textfield" name="fcf_contact_name" pattern="[a-zA-Z0-9\. ]+" value="' . ( isset( $_POST["fcf_contact_name"] ) ? esc_attr( $_POST["fcf_contact_name"] ) : '' ) . '">
 				<label class="fcf-textfield-label" for="fcf-contact-name">Your Name</label>
@@ -21,11 +27,11 @@ function fcf_build() {
 				<div class="g-recaptcha"';
 				global $theme;
 				if ( $theme['stylesheet'] == 1 ) {
-					echo 'data-theme="light"';
+					echo ' data-theme="light"';
 				} elseif ( $theme['stylesheet'] == 2 ) {
-					echo 'data-theme="dark"';
+					echo ' data-theme="dark"';
 				}
-				echo 'data-sitekey="' . sanitize_text_field( get_option( 'fcf_recaptcha_sitekey' ) ) . '"></div>
+				echo ' data-sitekey="' . sanitize_text_field( get_option( 'fcf_recaptcha_sitekey' ) ) . '"></div>
 			</div>
 			<div class="fcf-card-actions">
 				<button id="fcf_submitted" type="submit" class="fcf-button" name="fcf_submitted">Send</button>

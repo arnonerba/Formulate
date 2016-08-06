@@ -25,11 +25,13 @@ function build_fcf_options_page() { ?>
 add_action( 'admin_init', 'fcf_settings_init' );
 function fcf_settings_init() {
 	register_setting( 'fcf_settings', 'fcf_admin_email', 'validate_fcf_admin_email' );
+	register_setting( 'fcf_settings', 'fcf_form_title', 'validate_fcf_form_title' );
 	register_setting( 'fcf_settings', 'fcf_recaptcha_sitekey', 'validate_fcf_recaptcha_sitekey' );
 	register_setting( 'fcf_settings', 'fcf_recaptcha_secretkey', 'validate_fcf_recaptcha_secretkey' );
 	register_setting( 'fcf_settings', 'fcf_default_stylesheet' );
 
 	add_settings_field( 'fcf_admin_email', 'Admin Email', 'fcf_admin_email_callback', 'formulate', 'fcf_general_settings' );
+	add_settings_field( 'fcf_form_title', 'Contact Form Title', 'fcf_form_title_callback', 'formulate', 'fcf_general_settings' );
 	add_settings_field( 'fcf_recaptcha_sitekey', 'reCAPTCHA Site Key', 'fcf_recaptcha_sitekey_callback', 'formulate', 'fcf_recaptcha_settings' );
 	add_settings_field( 'fcf_recaptcha_secretkey', 'reCAPTCHA Secret Key', 'fcf_recaptcha_secretkey_callback', 'formulate', 'fcf_recaptcha_settings' );
 	add_settings_field( 'fcf_stylesheet_settings', 'Theme', 'fcf_stylesheet_settings_callback', 'formulate', 'fcf_advanced_settings' );
@@ -57,6 +59,16 @@ function fcf_admin_email_callback() {
 		$fcf_admin_email = sanitize_email( get_option( 'fcf_admin_email' ) );
 		echo '<input type="email" name="fcf_admin_email" value="' . $fcf_admin_email . '" />';
 		echo '<p class="description">If left empty, the WordPress admin email address will be used.</p>';
+	} else {
+		echo '<p>You don\'t have sufficient privileges to edit this setting</p>';
+	}
+}
+function fcf_form_title_callback() {
+	if ( current_user_can( 'administrator' ) ) {
+		// calls the custom setting in the correct place
+		$fcf_form_title = sanitize_text_field( get_option( 'fcf_form_title' ) );
+		echo '<input type="text" name="fcf_form_title" value="' . $fcf_form_title . '" />';
+		echo '<p class="description">If left empty, the form will be titled "Contact Us".</p>';
 	} else {
 		echo '<p>You don\'t have sufficient privileges to edit this setting</p>';
 	}
@@ -103,6 +115,17 @@ function validate_fcf_admin_email( $input ) {
 			$output = $input;
 		} else {
 			add_settings_error( 'fcf_admin_email', 'invalid-email', 'Please enter a valid email address.' );
+		}
+		return $output;
+	}
+}
+function validate_fcf_form_title( $input ) {
+	$output = sanitize_text_field( get_option( 'fcf_form_title' ) );
+	if ( !empty( $input ) ) {
+		if ( preg_match("/^[0-9a-zA-Z ]*$/", $input) ) {
+			$output = $input;
+		} else {
+			add_settings_error( 'fcf_form_title', 'invalid-title', 'Please only use 0-9, a-z, and A-Z in the title.' );
 		}
 		return $output;
 	}
