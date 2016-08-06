@@ -14,7 +14,8 @@ if ( is_admin() ) {
 	require_once plugin_dir_path( __FILE__ ) . 'settings.php';
 }
 
-$theme = get_option('fcf_default_stylesheet');
+$theme = get_option( 'fcf_default_stylesheet' );
+$displayTel = get_option( 'fcf_display_tel' );
 $configured = False;
 if ( !empty(get_option( 'fcf_recaptcha_sitekey' )) && !empty(get_option( 'fcf_recaptcha_secretkey' )) ) {
 	global $configured;

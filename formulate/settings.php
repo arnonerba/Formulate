@@ -26,12 +26,14 @@ add_action( 'admin_init', 'fcf_settings_init' );
 function fcf_settings_init() {
 	register_setting( 'fcf_settings', 'fcf_admin_email', 'validate_fcf_admin_email' );
 	register_setting( 'fcf_settings', 'fcf_form_title', 'validate_fcf_form_title' );
+	register_setting( 'fcf_settings', 'fcf_display_tel' );
 	register_setting( 'fcf_settings', 'fcf_recaptcha_sitekey', 'validate_fcf_recaptcha_sitekey' );
 	register_setting( 'fcf_settings', 'fcf_recaptcha_secretkey', 'validate_fcf_recaptcha_secretkey' );
 	register_setting( 'fcf_settings', 'fcf_default_stylesheet' );
 
 	add_settings_field( 'fcf_admin_email', 'Admin Email', 'fcf_admin_email_callback', 'formulate', 'fcf_general_settings' );
 	add_settings_field( 'fcf_form_title', 'Contact Form Title', 'fcf_form_title_callback', 'formulate', 'fcf_general_settings' );
+	add_settings_field( 'fcf_display_tel', 'Phone Number Field', 'fcf_display_tel_callback', 'formulate', 'fcf_general_settings' );
 	add_settings_field( 'fcf_recaptcha_sitekey', 'reCAPTCHA Site Key', 'fcf_recaptcha_sitekey_callback', 'formulate', 'fcf_recaptcha_settings' );
 	add_settings_field( 'fcf_recaptcha_secretkey', 'reCAPTCHA Secret Key', 'fcf_recaptcha_secretkey_callback', 'formulate', 'fcf_recaptcha_settings' );
 	add_settings_field( 'fcf_stylesheet_settings', 'Theme', 'fcf_stylesheet_settings_callback', 'formulate', 'fcf_advanced_settings' );
@@ -73,6 +75,17 @@ function fcf_form_title_callback() {
 		echo '<p>You don\'t have sufficient privileges to edit this setting</p>';
 	}
 }
+function fcf_display_tel_callback() {
+	if ( current_user_can( 'administrator' ) ) {
+
+		$options = get_option( 'fcf_display_tel' );
+
+		echo '<input type="checkbox" id="display_tel_checkbox" name="fcf_display_tel" value="1"' . checked( 1, $options, false ) . '/>
+		<label for="display_tel_checkbox">Include in form</label>';
+	} else {
+		echo '<p>You don\'t have sufficient privileges to edit this setting</p>';
+	}
+}
 function fcf_recaptcha_sitekey_callback() {
 	if ( current_user_can( 'administrator' ) ) {
 		// calls the custom setting in the correct place
@@ -92,19 +105,24 @@ function fcf_recaptcha_secretkey_callback() {
 	}
 }
 function fcf_stylesheet_settings_callback() {
-	$options = get_option( 'fcf_default_stylesheet' );
+	if ( current_user_can( 'administrator' ) ) {
 
-	echo '<input checked type="radio" id="stylesheet_option_one" name="fcf_default_stylesheet[stylesheet]" value="1"' . checked( 1, $options['stylesheet'], false ) . '/>
-	<label for="stylesheet_option_one">Material Light</label>
-	<p class="description">Light theme based on the Material Design Guidelines.</p>
-	<br />
-	<input type="radio" id="stylesheet_option_two" name="fcf_default_stylesheet[stylesheet]" value="2"' . checked( 2, $options['stylesheet'], false ) . '/>
-	<label for="stylesheet_option_two">Material Dark</label>
-	<p class="description">Dark theme based on the Material Design Guidelines.</p>
-	<br />
-	<input type="radio" id="stylesheet_option_three" name="fcf_default_stylesheet[stylesheet]" value="3"' . checked( 3, $options['stylesheet'], false ) . '/>
-	<label for="stylesheet_option_three">No Theme</label>
-	<p class="description">Advanced option; no CSS will be loaded.</p>';
+		$options = get_option( 'fcf_default_stylesheet' );
+
+		echo '<input checked type="radio" id="stylesheet_option_one" name="fcf_default_stylesheet[stylesheet]" value="1"' . checked( 1, $options['stylesheet'], false ) . '/>
+		<label for="stylesheet_option_one">Material Light</label>
+		<p class="description">Light theme based on the Material Design Guidelines.</p>
+		<br />
+		<input type="radio" id="stylesheet_option_two" name="fcf_default_stylesheet[stylesheet]" value="2"' . checked( 2, $options['stylesheet'], false ) . '/>
+		<label for="stylesheet_option_two">Material Dark</label>
+		<p class="description">Dark theme based on the Material Design Guidelines.</p>
+		<br />
+		<input type="radio" id="stylesheet_option_three" name="fcf_default_stylesheet[stylesheet]" value="3"' . checked( 3, $options['stylesheet'], false ) . '/>
+		<label for="stylesheet_option_three">No Theme</label>
+		<p class="description">Advanced option; no CSS will be loaded.</p>';
+	} else {
+		echo '<p>You don\'t have sufficient privileges to edit this setting</p>';
+	}
 }
 
 // validates the settings options

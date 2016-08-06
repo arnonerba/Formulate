@@ -16,8 +16,13 @@ function fcf_build() {
 			echo $title . '</div>
 			<div class="fcf-card-text">
 				<input type="text" id="fcf-contact-name" class="fcf-textfield" name="fcf_contact_name" pattern="[a-zA-Z0-9\. ]+" value="' . ( isset( $_POST["fcf_contact_name"] ) ? esc_attr( $_POST["fcf_contact_name"] ) : '' ) . '">
-				<label class="fcf-textfield-label" for="fcf-contact-name">Your Name</label>
-				<input type="email" id="fcf-contact-email" class="fcf-textfield" name="fcf_contact_email" value="' . ( isset( $_POST["fcf_contact_email"] ) ? esc_attr( $_POST["fcf_contact_email"] ) : '' ) . '">
+				<label class="fcf-textfield-label" for="fcf-contact-name">Your Name</label>';
+				global $displayTel;
+				if ( $displayTel == 1 ) {
+					echo '<input type="tel" id="fcf-phone-number" class="fcf-textfield" name="fcf_phone_number" pattern="[0-9\(\)\- ]+" value="' . ( isset( $_POST["fcf_phone_number"] ) ? esc_attr( $_POST["fcf_phone_number"] ) : '' ) . '">
+					<label class="fcf-textfield-label" for="fcf-phone-number">Phone Number (optional)</label>';
+				}
+				echo '<input type="email" id="fcf-contact-email" class="fcf-textfield" name="fcf_contact_email" value="' . ( isset( $_POST["fcf_contact_email"] ) ? esc_attr( $_POST["fcf_contact_email"] ) : '' ) . '">
 				<label class="fcf-textfield-label" for="fcf-contact-email">Email Address</label>
 				<textarea id="fcf-contact-message" class="fcf-textfield textarea" type="text" rows= "5" name="fcf_contact_message">' . ( isset( $_POST["fcf_contact_message"] ) ? esc_attr( $_POST["fcf_contact_message"] ) : '' ) . '</textarea>
 				<label class="fcf-textfield-label" for="fcf-contact-message">Message</label>

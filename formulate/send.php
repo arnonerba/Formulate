@@ -21,9 +21,19 @@ function fcf_send() {
 
 			// sanitize form values and setup email message
 			$name = sanitize_text_field( $_POST["fcf_contact_name"] );
+			$phoneNumber = sanitize_text_field( $_POST["fcf_phone_number"] );
 			$email = sanitize_email( $_POST["fcf_contact_email"] );
 			$subject = "[$blog_title]" . " New Inquiry From $name";
-			$message = "\nName: $name\n" . "\nEmail: $email\n" . "\nMessage:\n\n" . implode( "\n", array_map( 'sanitize_text_field', explode( "\n", $_POST['fcf_contact_message'] ) ) );
+
+			// only place phone number in email if phone number field is active
+			global $displayTel;
+			if ( $displayTel == 1 ) {
+				global $message;
+				$message = "\nName: $name\n" . "\nPhone Number: $phoneNumber\n" . "\nEmail: $email\n" . "\nMessage:\n\n" . implode( "\n", array_map( 'sanitize_text_field', explode( "\n", $_POST['fcf_contact_message'] ) ) );
+			} else {
+				global $message;
+				$message = "\nName: $name\n" . "\nEmail: $email\n" . "\nMessage:\n\n" . implode( "\n", array_map( 'sanitize_text_field', explode( "\n", $_POST['fcf_contact_message'] ) ) );
+			}
 
 			// get the email address configured on the settings page, otherwise, fall back to the admin email address
 			if ( get_option( 'fcf_admin_email' ) ) {
