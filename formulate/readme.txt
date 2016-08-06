@@ -1,5 +1,6 @@
 === Formulate ===
 Tags: contact form, contact, form, feedback, email, captcha, recaptcha, material design, material, google
+Requires at least: 2.7
 Tested up to: 4.5.3
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl.html
@@ -16,7 +17,7 @@ Formulate takes a minimalistic approach to the contact form. Lengthy contact for
 
 = Modern Themes =
 
-Built with the [Material Design Guidelines](https://material.google.com/) in mind, Formulate offers a clean, modern look.
+Formulate includes themes based on the [Material Design Guidelines](https://material.google.com/) for a clean, modern look.
 
 = Development =
 
