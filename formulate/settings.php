@@ -140,7 +140,7 @@ function validate_fcf_admin_email( $input ) {
 function validate_fcf_form_title( $input ) {
 	$output = sanitize_text_field( get_option( 'fcf_form_title' ) );
 	if ( !empty( $input ) ) {
-		if ( preg_match("/^[0-9a-zA-Z ]*$/", $input) ) {
+		if ( preg_match("/^[0-9a-zA-Z\'\"\- ]*$/", $input) ) {
 			$output = $input;
 		} else {
 			add_settings_error( 'fcf_form_title', 'invalid-title', 'Please only use 0-9, a-z, and A-Z in the title.' );
