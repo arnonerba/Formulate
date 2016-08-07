@@ -19,7 +19,7 @@ function fcf_build() {
 				<label class="fcf-textfield-label" for="fcf-contact-name">Your Name</label>';
 				global $displayTel;
 				if ( $displayTel == 1 ) {
-					echo '<input type="tel" id="fcf-phone-number" class="fcf-textfield" name="fcf_phone_number" pattern="[0-9\(\)\- ]+" value="' . ( isset( $_POST["fcf_phone_number"] ) ? esc_attr( $_POST["fcf_phone_number"] ) : '' ) . '">
+					echo '<input type="tel" id="fcf-phone-number" class="fcf-textfield" name="fcf_phone_number" pattern="[0-9\(\)\-\+\* ]+" value="' . ( isset( $_POST["fcf_phone_number"] ) ? esc_attr( $_POST["fcf_phone_number"] ) : '' ) . '">
 					<label class="fcf-textfield-label" for="fcf-phone-number">Phone Number (optional)</label>';
 				}
 				echo '<input type="email" id="fcf-contact-email" class="fcf-textfield" name="fcf_contact_email" value="' . ( isset( $_POST["fcf_contact_email"] ) ? esc_attr( $_POST["fcf_contact_email"] ) : '' ) . '">
