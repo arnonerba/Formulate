@@ -1,0 +1,46 @@
+.fcf-card {
+
+}
+.fcf-card-title {
+
+}
+.fcf-card-text {
+
+}
+.fcf-card-text p {
+
+}
+.fcf-card-actions {
+
+}
+
+.fcf-button, #fcf_submitted {
+
+}
+.fcf-button:hover, #fcf_submitted:hover {
+
+}
+.fcf-button:active, #fcf_submitted:active {
+
+}
+
+.fcf-textfield, #fcf-contact-name, #fcf-phone-number, #fcf-contact-email, #fcf-contact-message {
+	border: 3px inset #BDBDBD;
+}
+.fcf-textfield:focus, #fcf-contact-name:focus, #fcf-phone-number:focus, #fcf-contact-email:focus, #fcf-contact-message:focus {
+
+}
+.fcf-textfield-label {
+
+}
+.fcf-textfield:focus + .fcf-textfield-label {
+
+}
+.fcf-textfield.textarea {
+	width: 100% !important;
+	margin: 0 !important;
+}
+
+#fcf-recaptcha {
+
+}

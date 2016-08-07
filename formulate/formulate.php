@@ -33,6 +33,8 @@ if ( $configured ) {
 			} elseif ( $theme == 2 ) {
 				wp_enqueue_style( 'fcf-roboto', 'https://fonts.googleapis.com/css?family=Roboto:300,400', '', null );
 				wp_enqueue_style( 'fcf-material-dark', plugin_dir_url( __FILE__ ) . 'css/dark.css', '', '2.1' );
+			} elseif ( $theme == 3 ) {
+				wp_enqueue_style( 'fcf-windows-95', plugin_dir_url( __FILE__ ) . 'css/win95.css', '', '2.1' );
 			}
 		}
 	}

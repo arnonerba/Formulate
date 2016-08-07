@@ -118,7 +118,11 @@ function fcf_stylesheet_settings_callback() {
 		<p class="description">Dark theme based on the Material Design Guidelines.</p>
 		<br />
 		<input type="radio" id="stylesheet_option_three" name="fcf_default_stylesheet" value="3"' . checked( 3, $options, false ) . '/>
-		<label for="stylesheet_option_three">No Theme</label>
+		<label for="stylesheet_option_three">Windows 95</label>
+		<p class="description">under construction</p>
+		<br />
+		<input type="radio" id="stylesheet_option_four" name="fcf_default_stylesheet" value="4"' . checked( 4, $options, false ) . '/>
+		<label for="stylesheet_option_four">No Theme</label>
 		<p class="description">Advanced option; no CSS will be loaded.</p>';
 	} else {
 		echo '<p>You don\'t have sufficient privileges to edit this setting</p>';
