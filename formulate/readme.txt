@@ -9,7 +9,7 @@ Formulate is a simple contact form for WordPress.
 
 == Description ==
 
-Formulate allows you to add a contact form to your site to collect a visitor\'s name, email address, and message. A few key options are included on the easy-to-use admin settings page. Use of a Google reCAPTCHA is integrated and mandatory.
+Formulate allows you to add a contact form to your site to collect a visitor's name, email address, and message. A few key options are included on the easy-to-use admin settings page. Use of a Google reCAPTCHA is integrated and mandatory.
 
 = Less is More =
 
@@ -21,7 +21,7 @@ Formulate includes themes based on the [Material Design Guidelines](https://mate
 
 = Development =
 
-Follow development at [GitHub](https://github.com/arnonerba/formulate)
+Follow development at [GitHub](https://github.com/arnonerba/formulate).
 
 == Installation ==
 
@@ -35,7 +35,7 @@ Follow development at [GitHub](https://github.com/arnonerba/formulate)
 
 * Multiple responsive themes
 * Optional phone number field
-* Send contact form submissions to a custom email addres
+* Ability to send contact form submissions to a custom email addres
 * Ability to disable all themes and write your own CSS
 
 = Why am I not getting emails? =
