@@ -1,13 +1,5 @@
 .fcf-card {
 	position: relative;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: -webkit-flex;
-	display: flex;
-	-webkit-flex-direction: column;
-	flex-direction: column;
-	-webkit-flex: none;
-	flex: none;
 	background-color: #FFF;
 	border-radius: 2px;
 	max-width: 315px;
@@ -26,8 +18,6 @@
 	color: rgba(0,0,0,.87);
 }
 .fcf-card-text {
-	-webkit-flex-grow: 1;
-	flex-grow: 1;
 	position: relative;
 	margin: 16px;
 	font-size: 15px;
@@ -40,8 +30,6 @@
 	padding: 0;
 }
 .fcf-card-actions {
-	-webkit-flex: none;
-	flex: none;
 	padding: 8px;
 	border-top: 1px solid rgba(0,0,0,.1);
 }
