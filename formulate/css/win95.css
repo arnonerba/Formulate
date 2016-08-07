@@ -31,7 +31,7 @@
 .fcf-card-text {
 	border: 3px groove #FFF;
 	box-sizing: border-box;
-	padding: 12px 6px 4px 6px;
+	padding: 2px 6px 14px 6px;
 	margin: 6px;
 }
 .fcf-card.fcf-card-error > .fcf-card-text {
