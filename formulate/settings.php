@@ -119,7 +119,7 @@ function fcf_stylesheet_settings_callback() {
 		<br />
 		<input type="radio" id="stylesheet_option_three" name="fcf_default_stylesheet" value="3"' . checked( 3, $options, false ) . '/>
 		<label for="stylesheet_option_three">Windows 95</label>
-		<p class="description">under construction</p>
+		<p class="description">Authentic Windows 95 theme built with pure CSS.</p>
 		<br />
 		<input type="radio" id="stylesheet_option_four" name="fcf_default_stylesheet" value="4"' . checked( 4, $options, false ) . '/>
 		<label for="stylesheet_option_four">No Theme</label>
