@@ -1,40 +1,110 @@
-.fcf-card {
+@font-face {
+    font-family: PX Sans Nouveaux;
+    src: url(fonts/px_sans_nouveaux.ttf);
+}
 
+.fcf-card {
+	position: relative;
+	border-top: 3px solid #F5F5F5;
+	border-right: 3px solid #212121;
+	border-bottom: 3px solid #212121;
+	border-left: 3px solid #F5F5F5;
+	background-color: #C4C4C4;
+	max-width: 315px;
+	margin: 8px;
+	z-index: 1;
+	box-sizing: border-box;
+	overflow: hidden;
+	font-size: 10px;
+	font-family: 'PX Sans Nouveaux', sans-serif;
 }
 .fcf-card-title {
-
+	font-size: 10px;
+	font-weight: bold;
+	line-height: 18px;
+	box-sizing: border-box;
+	padding: 2px 4px;
+	margin: 2px;
+	color: #FFF;
+	background-color: #000082;
 }
 .fcf-card-text {
-
+	border: 3px groove #FFF;
+	box-sizing: border-box;
+	padding: 12px 6px 4px 6px;
+	margin: 6px;
+}
+.fcf-card.fcf-card-error > .fcf-card-text {
+	padding: 6px;
 }
 .fcf-card-text p {
 
 }
 .fcf-card-actions {
-
+	padding: 8px 6px;
 }
 
 .fcf-button, #fcf_submitted {
-
+	position: relative;
+	display: inline-block;
+	border-radius: 0;
+	border-top: 2px solid #F5F5F5;
+	border-right: 2px solid #212121;
+	border-bottom: 2px solid #212121;
+	border-left: 2px solid #F5F5F5;
+	padding: 6px 12px;
+	background-color: #C4C4C4;
+	overflow: hidden;
+	outline: none;
+	cursor: pointer;
+	text-decoration: none;
+	text-transform: none;
+	text-align: center;
+	font-weight: normal;
+	color: #212121;
+	line-height: 10px;
+	font-size: 10px;
+	font-family: 'PX Sans Nouveaux', sans-serif;
 }
-.fcf-button:hover, #fcf_submitted:hover {
-
+.fcf-button::first-letter, #fcf_submitted::first-letter {
+	text-decoration: underline;
 }
 .fcf-button:active, #fcf_submitted:active {
-
+	border-top: 2px solid #212121;
+	border-right: 2px solid #F5F5F5;
+	border-bottom: 2px solid #F5F5F5;
+	border-left: 2px solid #212121;
 }
 
 .fcf-textfield, #fcf-contact-name, #fcf-phone-number, #fcf-contact-email, #fcf-contact-message {
-	border: 3px inset #BDBDBD;
-}
-.fcf-textfield:focus, #fcf-contact-name:focus, #fcf-phone-number:focus, #fcf-contact-email:focus, #fcf-contact-message:focus {
+	border-top: 3px solid #212121;
+	border-right: 3px solid #F5F5F5;
+	border-bottom: 3px solid #F5F5F5;
+	border-left: 3px solid #212121;
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0 2px;
+	background: #FFF;
+	text-align: left;
+	color: rgba(0,0,0,.87);
+	line-height: normal;
+	outline: none;
+	border-radius: 0;
+	font-size: 10px;
+	font-family: 'PX Sans Nouveaux', sans-serif;
+	-webkit-appearance: none;
 
 }
 .fcf-textfield-label {
-
+	display: block;
+	padding: 4px 0;
+	font-size: 10px;
+	color: #212121;
 }
-.fcf-textfield:focus + .fcf-textfield-label {
-
+.fcf-textfield-label::first-letter {
+	text-decoration: underline;
 }
 .fcf-textfield.textarea {
 	width: 100% !important;
@@ -42,5 +112,10 @@
 }
 
 #fcf-recaptcha {
-
+	border-top: 2px solid #F5F5F5;
+	border-right: 2px solid #212121;
+	border-bottom: 2px solid #212121;
+	border-left: 2px solid #F5F5F5;
+	margin: 0 6px;
+	overflow: hidden;
 }
