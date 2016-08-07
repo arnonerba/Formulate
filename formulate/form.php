@@ -17,7 +17,7 @@ function fcf_build() {
 		$fcfContactEmailField = '<input type="email" id="fcf-contact-email" class="fcf-textfield" name="fcf_contact_email" value="' . ( isset( $_POST["fcf_contact_email"] ) ? esc_attr( $_POST["fcf_contact_email"] ) : '' ) . '">';
 		$fcfContactEmailLabel = '<label class="fcf-textfield-label" for="fcf-contact-email">Email Address</label>';
 
-		$fcfContactMessageField = '<textarea id="fcf-contact-message" class="fcf-textfield textarea" type="text" rows= "5" name="fcf_contact_message">' . ( isset( $_POST["fcf_contact_message"] ) ? esc_attr( $_POST["fcf_contact_message"] ) : '' ) . '</textarea>';
+		$fcfContactMessageField = '<textarea id="fcf-contact-message" class="fcf-textfield fcf-textarea" type="text" rows= "5" name="fcf_contact_message">' . ( isset( $_POST["fcf_contact_message"] ) ? esc_attr( $_POST["fcf_contact_message"] ) : '' ) . '</textarea>';
 		$fcfContactMessageLabel = '<label class="fcf-textfield-label" for="fcf-contact-message">Message</label>';
 
 		echo $fcfreCAPTCHAjs;

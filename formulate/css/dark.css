@@ -94,7 +94,7 @@
 .fcf-textfield:focus + .fcf-textfield-label {
 	color: #FF9800;
 }
-.fcf-textfield.textarea {
+.fcf-textfield.fcf-textarea {
 	width: 100% !important;
 	margin: 0 !important;
 }

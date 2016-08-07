@@ -106,7 +106,7 @@
 .fcf-textfield-label::first-letter {
 	text-decoration: underline;
 }
-.fcf-textfield.textarea {
+.fcf-textfield.fcf-textarea {
 	width: 100% !important;
 	margin: 0 !important;
 }
