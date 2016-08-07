@@ -31,9 +31,9 @@ function fcf_build() {
 			<div id="fcf-recaptcha">
 				<div class="g-recaptcha"';
 				global $theme;
-				if ( $theme['stylesheet'] == 1 ) {
+				if ( $theme == 1 ) {
 					echo ' data-theme="light"';
-				} elseif ( $theme['stylesheet'] == 2 ) {
+				} elseif ( $theme == 2 ) {
 					echo ' data-theme="dark"';
 				}
 				echo ' data-sitekey="' . sanitize_text_field( get_option( 'fcf_recaptcha_sitekey' ) ) . '"></div>

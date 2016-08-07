@@ -3,7 +3,7 @@
 /*
 Plugin Name: Formulate
 Description: Simple contact form for WordPress.
-Version:     2.0
+Version:     2.1
 Author:      Arnon Erba
 Author URI:  https://www.arnonerba.com/
 */
@@ -27,12 +27,12 @@ if ( $configured ) {
 	function fcf_styles() {
 		if (!is_admin()) {
 			global $theme;
-			if ( $theme['stylesheet'] == 1 ) {
+			if ( $theme == 1 ) {
 				wp_enqueue_style( 'fcf-roboto', 'https://fonts.googleapis.com/css?family=Roboto:300,400', '', null );
-				wp_enqueue_style( 'fcf-material-light', plugin_dir_url( __FILE__ ) . 'css/light.css', '', '1.5' );
-			} elseif ( $theme['stylesheet'] == 2 ) {
+				wp_enqueue_style( 'fcf-material-light', plugin_dir_url( __FILE__ ) . 'css/light.css', '', '2.1' );
+			} elseif ( $theme == 2 ) {
 				wp_enqueue_style( 'fcf-roboto', 'https://fonts.googleapis.com/css?family=Roboto:300,400', '', null );
-				wp_enqueue_style( 'fcf-material-dark', plugin_dir_url( __FILE__ ) . 'css/dark.css', '', '1.5' );
+				wp_enqueue_style( 'fcf-material-dark', plugin_dir_url( __FILE__ ) . 'css/dark.css', '', '2.1' );
 			}
 		}
 	}
