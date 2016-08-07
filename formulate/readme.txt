@@ -25,13 +25,22 @@ Follow development at [GitHub](https://github.com/arnonerba/formulate)
 
 == Installation ==
 
-TBD
+1. Download the plugin files and upload the "formulate" directory to `/wp-content/plugins/` or wherever your WordPress installation stores plugins. You man also install the plugin through the WordPress plugins screen.
+1. Active Formulate on the Plugins page.
+1. Go to Settings > Formulate to setup your reCAPTCHA and configure how you want Formulate to look and behave.
 
 == Frequently Asked Questions ==
 
 = What options does Formulate provide? =
 
-You can pick between a light and a dark them, add an optional phone number field, and elect to have submissions sent to any email address of your choosing. For more advanced users, there is the option to write your own custom CSS to style the form.
+* Multiple responsive themes
+* Optional phone number field
+* Send contact form submissions to a custom email addres
+* Ability to disable all themes and write your own CSS
+
+= Why am I not getting emails? =
+
+Formulate does not handle mail delivery. Instead, it uses the WordPress wp_mail function. If you see an "Uh oh, something went wrong" error, it is almost definitely a problem with your mail server or with your web host. You can check to see if WordPress is capable of sending email at all by requesting a password reset email from the login page. If your webhost does not natively support sending email, you may need to install an SMTP plugin to send email through another server.
 
 = How do I uninstall Formulate? =
 
