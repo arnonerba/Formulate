@@ -35,7 +35,7 @@ function fcf_build() {
 			<div class="fcf-card-text">';
 
 				global $theme;
-				if ( $theme == 3 ) {
+				if ( $theme == 3 || 4 ) {
 					echo $fcfContactNameLabel;
 					echo $fcfContactNameField;
 				} else {
@@ -46,7 +46,7 @@ function fcf_build() {
 				global $displayTel;
 				if ( $displayTel == 1 ) {
 					global $theme;
-					if ( $theme == 3 ) {
+					if ( $theme == 3 || 4 ) {
 						echo $fcfPhoneNumberLabel;
 						echo $fcfPhoneNumberField;
 					} else {
@@ -55,7 +55,7 @@ function fcf_build() {
 					}
 				}
 
-				if ( $theme == 3 ) {
+				if ( $theme == 3 || 4 ) {
 					echo $fcfContactEmailLabel;
 					echo $fcfContactEmailField;
 				} else {
@@ -63,7 +63,7 @@ function fcf_build() {
 					echo $fcfContactEmailLabel;
 				}
 
-				if ( $theme == 3 ) {
+				if ( $theme == 3 || 4 ) {
 					echo $fcfContactMessageLabel;
 					echo $fcfContactMessageField;
 				} else {
