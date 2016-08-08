@@ -1,0 +1,73 @@
+.fcf-card {
+	position: relative;
+	background-color: #F7F7F7;
+	max-width: 315px;
+	box-sizing: border-box;
+	margin: 8px;
+	padding: 0;
+	z-index: 1;
+	border: 1px solid #C7C7CC;
+	border-radius: 5px;
+	overflow: hidden;
+	font-size: 14px;
+	font-family: 'Helvetica', sans-serif;
+}
+.fcf-card-title {
+	padding: 8px 8px 8px;
+	font-weight: bold;
+	text-align: center;
+	background-color: #FFF;
+	border-bottom: 1px solid #C7C7CC;
+}
+.fcf-card-text {
+	padding: 12px;
+}
+
+.fcf-card-actions {
+	padding: 6px 8px;
+	text-align: right;
+	background-color: #FFF;
+	border-top: 1px solid #C7C7CC;
+}
+
+.fcf-button, #fcf_submitted {
+	background: 0 0;
+	color: #007AFF;
+	margin: 0;
+	padding: 0;
+	line-height: normal;
+	text-transform: none;
+	font-weight: bold;
+	font-size: 14px;
+	font-family: 'Helvetica', sans-serif;
+}
+
+.fcf-textfield, #fcf-contact-name, #fcf-phone-number, #fcf-contact-email, #fcf-contact-message {
+	display: block;
+	border: 1px solid #C7C7CC;
+	border-radius: 5px;
+	background: #FFF;
+	width: 100%;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 4px 8px;
+	text-align: left;
+	color: #000;
+	line-height: normal;
+	outline: none;
+	font-size: 14px;
+	font-family: 'Helvetica', sans-serif;
+	-webkit-appearance: none;
+}
+.fcf-textfield-label {
+	color: #616161;
+}
+.fcf-textfield.fcf-textarea {
+	width: 100% !important;
+	margin: 0 !important;
+}
+
+#fcf-recaptcha {
+	margin: 0 0 12px 5px;
+	overflow: hidden;
+}
