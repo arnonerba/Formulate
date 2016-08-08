@@ -122,7 +122,11 @@ function fcf_stylesheet_settings_callback() {
 		<p class="description">Authentic Windows 95 theme built with pure CSS.</p>
 		<br />
 		<input type="radio" id="stylesheet_option_four" name="fcf_default_stylesheet" value="4"' . checked( 4, $options, false ) . '/>
-		<label for="stylesheet_option_four">No Theme</label>
+		<label for="stylesheet_option_four">iOS</label>
+		<p class="description">A simple light theme based on iOS interface guidelines.</p>
+		<br />
+		<input type="radio" id="stylesheet_option_five" name="fcf_default_stylesheet" value="5"' . checked( 5, $options, false ) . '/>
+		<label for="stylesheet_option_five">No Theme</label>
 		<p class="description">Advanced option; no CSS will be loaded.</p>';
 	} else {
 		echo '<p>You don\'t have sufficient privileges to edit this setting</p>';

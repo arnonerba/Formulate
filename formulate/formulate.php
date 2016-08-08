@@ -35,6 +35,8 @@ if ( $configured ) {
 				wp_enqueue_style( 'fcf-material-dark', plugin_dir_url( __FILE__ ) . 'css/dark.css', '', '2.1' );
 			} elseif ( $theme == 3 ) {
 				wp_enqueue_style( 'fcf-windows-95', plugin_dir_url( __FILE__ ) . 'css/win95.css', '', '2.1' );
+			} elseif ( $theme == 4 ) {
+				wp_enqueue_style( 'fcf-ios', plugin_dir_url( __FILE__ ) . 'css/ios.css', '', '2.1' );
 			}
 		}
 	}
