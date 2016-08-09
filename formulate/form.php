@@ -35,40 +35,40 @@ function fcf_build() {
 			<div class="fcf-card-text">';
 
 				global $theme;
-				if ( $theme == 3 || $theme == 4 ) {
-					echo $fcfContactNameLabel;
+				if ( $theme == 1 || $theme == 2 ) {
 					echo $fcfContactNameField;
+					echo $fcfContactNameLabel;
 				} else {
-					echo $fcfContactNameField;
 					echo $fcfContactNameLabel;
+					echo $fcfContactNameField;
 				}
 
 				global $displayTel;
 				if ( $displayTel == 1 ) {
 					global $theme;
-					if ( $theme == 3 || $theme == 4 ) {
-						echo $fcfPhoneNumberLabel;
+					if ( $theme == 1 || $theme == 2 ) {
 						echo $fcfPhoneNumberField;
+						echo $fcfPhoneNumberLabel;
 					} else {
-						echo $fcfPhoneNumberField;
 						echo $fcfPhoneNumberLabel;
+						echo $fcfPhoneNumberField;
 					}
 				}
 
-				if ( $theme == 3 || $theme == 4 ) {
-					echo $fcfContactEmailLabel;
+				if ( $theme == 1 || $theme == 2 ) {
 					echo $fcfContactEmailField;
+					echo $fcfContactEmailLabel;
 				} else {
-					echo $fcfContactEmailField;
 					echo $fcfContactEmailLabel;
+					echo $fcfContactEmailField;
 				}
 
-				if ( $theme == 3 || $theme == 4 ) {
-					echo $fcfContactMessageLabel;
+				if ( $theme == 1 || $theme == 2 ) {
 					echo $fcfContactMessageField;
+					echo $fcfContactMessageLabel;
 				} else {
-					echo $fcfContactMessageField;
 					echo $fcfContactMessageLabel;
+					echo $fcfContactMessageField;
 				}
 
 			echo '</div>
