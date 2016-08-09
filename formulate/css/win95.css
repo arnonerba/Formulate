@@ -42,6 +42,7 @@
 }
 .fcf-card-actions {
 	padding: 8px 6px;
+	text-align: right;
 }
 
 .fcf-button, #fcf_submitted {
