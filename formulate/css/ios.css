@@ -32,6 +32,7 @@
 
 .fcf-button, #fcf_submitted {
 	background: 0 0;
+	border: none;
 	color: #007AFF;
 	margin: 0;
 	padding: 0;
