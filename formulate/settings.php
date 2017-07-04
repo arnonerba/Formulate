@@ -9,7 +9,11 @@ function fcf_options_page() {
 function build_fcf_options_page() { ?>
 	<div class="wrap">
 		<h1>Formulate Settings</h1>
-		<?php if ( empty(get_option( 'fcf_recaptcha_sitekey' )) && empty(get_option( 'fcf_recaptcha_secretkey' )) ) { ?>
+		<?php // The PHP < 5.5 empty() function workaround is also used here.
+			global $fcf_recaptcha_sitekey_set;
+			global $fcf_recaptcha_secretkey_set;
+		?>
+		<?php if ( empty( $fcf_recaptcha_sitekey_set ) && empty( $fcf_recaptcha_secretkey_set ) ) { ?>
 		<div class="notice notice-warning">
 			<p>You must enter a valid reCAPTCHA Site Key and Secret Key before the contact form will display on your site.</p>
 		</div>

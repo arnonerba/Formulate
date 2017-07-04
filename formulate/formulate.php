@@ -17,7 +17,13 @@ if ( is_admin() ) {
 $theme = get_option( 'fcf_default_stylesheet' );
 $displayTel = get_option( 'fcf_display_tel' );
 $configured = False;
-if ( !empty(get_option( 'fcf_recaptcha_sitekey' )) && !empty(get_option( 'fcf_recaptcha_secretkey' )) ) {
+
+// We can't use empty() on a function return in PHP < 5.5, so here is a workaround
+$fcf_recaptcha_sitekey_set = get_option( 'fcf_recaptcha_sitekey' );
+$fcf_recaptcha_secretkey_set = get_option( 'fcf_recaptcha_secretkey' );
+
+// Here is where we use the workaround
+if ( !empty( $fcf_recaptcha_sitekey_set ) && !empty( $fcf_recaptcha_secretkey_set ) ) {
 	global $configured;
 	$configured = True;
 }
