@@ -3,7 +3,7 @@
 /*
 Plugin Name: Formulate
 Description: Simple contact form for WordPress.
-Version:     2.1
+Version:     2.3
 Author:      Arnon Erba
 Author URI:  https://www.arnonerba.com/
 */
