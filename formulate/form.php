@@ -17,7 +17,7 @@ function fcf_build() {
 		$fcfContactEmailField = '<input type="email" id="fcf-contact-email" class="fcf-textfield" name="fcf_contact_email" value="' . ( isset( $_POST["fcf_contact_email"] ) ? esc_attr( $_POST["fcf_contact_email"] ) : '' ) . '">';
 		$fcfContactEmailLabel = '<label class="fcf-textfield-label" for="fcf-contact-email">Email Address</label>';
 
-		$fcfContactMessageField = '<textarea id="fcf-contact-message" class="fcf-textfield fcf-textarea" type="text" rows= "5" name="fcf_contact_message">' . ( isset( $_POST["fcf_contact_message"] ) ? esc_attr( $_POST["fcf_contact_message"] ) : '' ) . '</textarea>';
+		$fcfContactMessageField = '<textarea id="fcf-contact-message" class="fcf-textfield fcf-textarea" rows= "5" name="fcf_contact_message">' . ( isset( $_POST["fcf_contact_message"] ) ? esc_attr( $_POST["fcf_contact_message"] ) : '' ) . '</textarea>';
 		$fcfContactMessageLabel = '<label class="fcf-textfield-label" for="fcf-contact-message">Message</label>';
 
 		echo $fcfreCAPTCHAjs;
@@ -35,7 +35,7 @@ function fcf_build() {
 			<div class="fcf-card-text">';
 
 				global $theme;
-				if ( $theme == 1 || $theme == 2 ) {
+				if ( $theme == 1 || $theme == 2 || $theme == 5 ) {
 					echo $fcfContactNameField;
 					echo $fcfContactNameLabel;
 				} else {
@@ -46,7 +46,7 @@ function fcf_build() {
 				global $displayTel;
 				if ( $displayTel == 1 ) {
 					global $theme;
-					if ( $theme == 1 || $theme == 2 ) {
+					if ( $theme == 1 || $theme == 2 || $theme == 5  ) {
 						echo $fcfPhoneNumberField;
 						echo $fcfPhoneNumberLabel;
 					} else {
@@ -55,7 +55,7 @@ function fcf_build() {
 					}
 				}
 
-				if ( $theme == 1 || $theme == 2 ) {
+				if ( $theme == 1 || $theme == 2 || $theme == 5  ) {
 					echo $fcfContactEmailField;
 					echo $fcfContactEmailLabel;
 				} else {
@@ -63,7 +63,7 @@ function fcf_build() {
 					echo $fcfContactEmailField;
 				}
 
-				if ( $theme == 1 || $theme == 2 ) {
+				if ( $theme == 1 || $theme == 2 || $theme == 5  ) {
 					echo $fcfContactMessageField;
 					echo $fcfContactMessageLabel;
 				} else {

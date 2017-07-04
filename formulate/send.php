@@ -47,7 +47,7 @@ function fcf_send() {
 				if ( wp_mail( $to, $subject, $message ) ) {
 					echo '<div class="fcf-card fcf-card-error">';
 					echo '<div class="fcf-card-text">';
-					echo '<p>Thanks for contacting us. We will respond to you as soon as possible.</p>';
+					echo 'Thanks for contacting us. We will respond to you as soon as possible.';
 					echo '</div>';
 					echo '</div>';
 				} else {
