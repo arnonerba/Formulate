@@ -44,4 +44,4 @@ Formulate does not handle mail delivery. Instead, it uses the WordPress wp_mail 
 
 = How do I uninstall Formulate? =
 
-Simple deactivate Formulate and click on the "delete" button. Formulate will clean up after itself and WordPress will take care of the rest.
+Simply deactivate Formulate and click on the "delete" button. Formulate will clean up after itself and WordPress will take care of the rest.
